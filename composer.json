@@ -1,0 +1,32 @@
+{
+    "name": "b3n/service-provider-contentful",
+    "type": "library",
+    "description": "Contentful SDK client with config provider",
+    "license" : "MIT",
+    "homepage": "https://github.com/benjaminhirsch/service-provider-contentful",
+    "authors": [
+        {
+            "name": "Benjamin Hirsch",
+            "email": "mail@benjaminhirsch.net",
+            "role": "Developer",
+            "homepage": "http://benjaminhirsch.net"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "contentful/contentful": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ServiceProviderContentful\\": "src/"
+        }
+    },
+    "require-dev": {
+
+    },
+    "autoload-dev": {
+        "psr-4": {
+
+        }
+    }
+}
