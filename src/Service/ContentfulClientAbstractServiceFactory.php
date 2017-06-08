@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace ServiceProviderContentful\Service;
 
+use Contentful\Delivery\Client;
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
 use ServiceProviderContentful\ContentfulClientFactory;
@@ -31,12 +32,13 @@ class ContentfulClientAbstractServiceFactory implements AbstractFactoryInterface
      * @param  string $requestedName
      * @return bool
      */
-    public function canCreate(ContainerInterface $container, $requestedName)
+    public function canCreate(ContainerInterface $container, $requestedName): bool
     {
         $config = $this->getConfig($container);
         if (empty($config)) {
             return false;
         }
+
         return (isset($config[$requestedName]) && is_array($config[$requestedName]));
     }
 
@@ -46,15 +48,16 @@ class ContentfulClientAbstractServiceFactory implements AbstractFactoryInterface
      * @param  ContainerInterface $container
      * @param  string $requestedName
      * @param  null|array $options
-     * @return object
+     * @return Client
      * @throws ServiceNotFoundException if unable to resolve the service.
      * @throws ServiceNotCreatedException if an exception is raised when
      *     creating a service.
      * @throws ContainerException if any other error occurs
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): Client
     {
         $config = $this->getConfig($container);
+
         //return StorageFactory::factory($config[$requestedName]);
         return ContentfulClientFactory::factory($config[$requestedName]);
     }
@@ -65,24 +68,27 @@ class ContentfulClientAbstractServiceFactory implements AbstractFactoryInterface
      * @param  ContainerInterface $container
      * @return array
      */
-    protected function getConfig(ContainerInterface $container)
+    protected function getConfig(ContainerInterface $container): array
     {
         if ($this->config !== null) {
             return $this->config;
         }
 
-        if (! $container->has('config')) {
+        if (!$container->has('config')) {
             $this->config = [];
+
             return $this->config;
         }
 
         $config = $container->get('config');
-        if (! isset($config[$this->configKey])) {
+        if (!isset($config[$this->configKey])) {
             $this->config = [];
+
             return $this->config;
         }
 
         $this->config = $config[$this->configKey];
+
         return $this->config;
     }
 }

@@ -14,7 +14,7 @@ class ContentfulClientFactory
      * @return Client
      * @throws InvalidArgumentException
      */
-    public static function factory(array $config)
+    public static function factory(array $config): Client
     {
         if (!isset($config['spaceId'])) {
             throw new InvalidArgumentException('Missing Space ID (spaceid)');

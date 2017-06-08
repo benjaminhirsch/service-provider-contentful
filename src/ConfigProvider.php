@@ -10,14 +10,14 @@ class ConfigProvider
     /**
      * Return default configuration for contentful
      */
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             'dependencies' => $this->getDependencies()
         ];
     }
 
-    private function getDependencies()
+    private function getDependencies(): array
     {
         return [
             'abstract_factories' => [
