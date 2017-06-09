@@ -28,5 +28,11 @@
         "psr-4": {
 
         }
+    },
+    "extra": {
+        "zf": {
+            "component": "ServiceProviderContentful",
+            "config-provider": "ServiceProviderContentful\\ConfigProvider"
+        }
     }
 }
