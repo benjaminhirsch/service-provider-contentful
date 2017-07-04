@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4462bee1f1341a58d52900e3afc2eb2a",
+    "content-hash": "59fea8e7a9643253346c226e32a31642",
     "packages": [
         {
             "name": "contentful/contentful",
-            "version": "1.2.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contentful/contentful.php.git",
-                "reference": "d3fd015dfe67c9dfdd744ae6531de7c1084d2e4f"
+                "reference": "1719880365edc08ca2da026dbd2e0b2174298b0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/d3fd015dfe67c9dfdd744ae6531de7c1084d2e4f",
-                "reference": "d3fd015dfe67c9dfdd744ae6531de7c1084d2e4f",
+                "url": "https://api.github.com/repos/contentful/contentful.php/zipball/1719880365edc08ca2da026dbd2e0b2174298b0a",
+                "reference": "1719880365edc08ca2da026dbd2e0b2174298b0a",
                 "shasum": ""
             },
             "require": {
@@ -33,10 +33,13 @@
                 "jakub-onderka/php-parallel-lint": "^0.9.2",
                 "php-vcr/phpunit-testlistener-vcr": "^2.0"
             },
+            "bin": [
+                "bin/contentful"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.0-dev"
+                    "dev-master": "2.1.0-dev"
                 }
             },
             "autoload": {
@@ -49,7 +52,7 @@
                 "MIT"
             ],
             "description": "SDK for the Contentful Content Delivery API",
-            "time": "2017-05-16T11:16:22+00:00"
+            "time": "2017-06-16T11:22:13+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

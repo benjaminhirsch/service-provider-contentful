@@ -1,7 +1,7 @@
 {
     "name": "b3n/service-provider-contentful",
     "type": "library",
-    "description": "Contentful SDK client with config provider",
+    "description": "Zend Component Service Provider for Contentful",
     "license" : "MIT",
     "homepage": "https://github.com/benjaminhirsch/service-provider-contentful",
     "authors": [
@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": "^7.0",
-        "contentful/contentful": "^1.2"
+        "contentful/contentful": "^2.0"
     },
     "autoload": {
         "psr-4": {
